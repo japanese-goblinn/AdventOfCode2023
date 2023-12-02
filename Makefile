@@ -7,3 +7,6 @@ day1_2:
 day2_1:
 	@./Day2_1.swift
 
+day2_2:
+	@./Day2_2.swift
+
