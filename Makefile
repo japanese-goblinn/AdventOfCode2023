@@ -1,17 +1,17 @@
-day1_1:
-	@./Day1_1.swift
+day01_1:
+	@./Day01_1.swift
 
-day1_2:
-	@./Day1_2.swift
+day01_2:
+	@./Day01_2.swift
 
-day2_1:
-	@./Day2_1.swift
+day02_1:
+	@./Day02_1.swift
 
-day2_2:
-	@./Day2_2.swift
+day02_2:
+	@./Day02_2.swift
 
-day3_1:
-	@./Day3_1.swift
+day03_1:
+	@./Day03_1.swift
 
-day3_2:
-	@./Day3_2.swift
+day03_2:
+	@./Day03_2.swift

@@ -2,7 +2,7 @@
 
 import Foundation
 
-func day1_1(input: String) -> Int {
+func solve(for input: String) -> Int {
 	input.components(separatedBy: .newlines)
 		.map { line -> Int in
 			let digits = line.compactMap { char in
@@ -21,10 +21,10 @@ func day1_1(input: String) -> Int {
 
 do {
 	let text = try String(
-		contentsOf: URL(fileURLWithPath: "Inputs/day1_1.txt"), 
+		contentsOf: URL(fileURLWithPath: "Inputs/day01.txt"), 
 		encoding: .utf8
 	)
-	print(day1_1(input: text))
+	print(solve(for: text))
 } catch {
 	print("Error reading file: \(error)")
 }

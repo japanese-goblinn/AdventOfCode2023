@@ -15,12 +15,6 @@ extension Sequence<UInt> {
   }
 }
 
-extension Sequence<UInt> {
-  func product() -> Element {
-    reduce(into: 1, *=)
-  }
-}
-
 extension Array {
 	mutating func prepend(_ element: Element) {
     insert(element, at: 0)
@@ -48,9 +42,9 @@ extension [[String]] {
 	}
 }
 
-func day3_2(input: String) -> UInt {
-	func isGear(_ element: String) -> Bool {
-		element == "*"
+func solve(for input: String) -> UInt {
+	func isSymbol(_ element: String) -> Bool {
+		UInt(element) == nil && element != "."
 	}
 
 	func isDigit(_ element: String) -> Bool { 
@@ -109,8 +103,7 @@ func day3_2(input: String) -> UInt {
 
 	var numbers = [UInt]()
 	for (sectionIndex, section) in parts.enumerated() {
-		for (itemIndex, item) in section.enumerated() where isGear(item) {
-			var localNumbers = [UInt]()
+		for (itemIndex, item) in section.enumerated() where isSymbol(item) {
 			let lookupIndexPaths = [
 				IndexPath(item: itemIndex-1, section: sectionIndex-1),
 				IndexPath(item: itemIndex, section: sectionIndex-1),
@@ -133,11 +126,8 @@ func day3_2(input: String) -> UInt {
 						searchedItem: searchedItem,
 						searchedSection: searchedSection
 					)
-					localNumbers.append(number)
+					numbers.append(number)
 				}
-			}
-			if localNumbers.count == 2 {
-				numbers.append(localNumbers.product())
 			}
 		}
 	}
@@ -147,25 +137,10 @@ func day3_2(input: String) -> UInt {
 
 do {
 	let text = try String(
-		contentsOf: URL(fileURLWithPath: "Inputs/day3.txt"), 
+		contentsOf: URL(fileURLWithPath: "Inputs/day03.txt"), 
 		encoding: .utf8
 	)
-	print(day3_2(input: text))
-
-	// print(day3_2(
-	// 	input: """
-	// 	467..114..
-	// 	...*......
-	// 	..35..633.
-	// 	......#...
-	// 	617*......
-	// 	.....+.58.
-	// 	..592.....
-	// 	......755.
-	// 	...$.*....
-	// 	.664.598..
-	// 	"""
-	// ))
+	print(solve(for: text))
 } catch {
 	print("Error reading file: \(error)")
 }

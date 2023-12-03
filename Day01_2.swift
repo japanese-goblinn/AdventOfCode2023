@@ -8,7 +8,7 @@ extension String {
 	}
 }
 
-func day1_2(input: String) -> Int {
+func solve(for input: String) -> Int {
 	enum RawDigit: String, CaseIterable { 
 		case one, two, three, four, five, six, seven, eight, nine
 
@@ -62,10 +62,10 @@ func day1_2(input: String) -> Int {
 
 do {
 	let text = try String(
-		contentsOf: URL(fileURLWithPath: "Inputs/day1_1.txt"), // same input as 1 task
+		contentsOf: URL(fileURLWithPath: "Inputs/day01.txt"), 
 		encoding: .utf8
 	)
-	print(day1_2(input: text))
+	print(solve(for: text))
 } catch {
 	print("Error reading file: \(error)")
 }

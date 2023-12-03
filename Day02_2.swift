@@ -12,7 +12,7 @@ extension String {
 	var isNotEmpty: Bool { !isEmpty }
 }
 
-func day2_1(input: String) -> UInt {
+func solve(for input: String) -> UInt {
 	enum CubeColor: String, Hashable { 
 		case red, green, blue
 	}
@@ -60,10 +60,10 @@ func day2_1(input: String) -> UInt {
 
 do {
 	let text = try String(
-		contentsOf: URL(fileURLWithPath: "Inputs/day2_1.txt"), // same input as task 1
+		contentsOf: URL(fileURLWithPath: "Inputs/day02.txt"),
 		encoding: .utf8
 	)
-	print(day2_1(input: text))
+	print(solve(for: text))
 } catch {
 	print("Error reading file: \(error)")
 }
