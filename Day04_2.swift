@@ -13,7 +13,6 @@ func solve(for input: String) -> UInt {
 	for line in input.components(separatedBy: .newlines) {
 		var cardСopiesWin: UInt = 0
 		let numbers = line.components(separatedBy: "|")
-		nu
 
 		let rawWinningNumbers = numbers.first!
 		let rawWinningNumbersMatches = rawWinningNumbers.matches(of: numberRegex)

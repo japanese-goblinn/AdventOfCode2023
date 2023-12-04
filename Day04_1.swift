@@ -48,7 +48,7 @@ func solve(for input: String) -> UInt {
 // """))
 
 do {
-	let txt = try String(
+	let text = try String(
 		contentsOf: URL(fileURLWithPath: "Inputs/day04.txt"), 
 		encoding: .utf8
 	)
